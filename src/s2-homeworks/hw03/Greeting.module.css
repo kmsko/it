@@ -5,6 +5,8 @@
 }
 
 .error {
+    background-color: rgb(255, 161, 161);
+    
 }
 
 .input {
@@ -14,6 +16,7 @@
 }
 
 .errorInput {
+
 }
 
 .button {
