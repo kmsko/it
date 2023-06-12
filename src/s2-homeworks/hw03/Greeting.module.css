@@ -5,18 +5,19 @@
 }
 
 .error {
-    background-color: rgb(255, 161, 161);
+    
     
 }
 
 .input {
+    border: 1px solid blue;
 }
 
 .input:focus {
 }
 
 .errorInput {
-
+    background-color: rgb(255, 161, 161);
 }
 
 .button {

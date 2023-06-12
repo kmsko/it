@@ -16,7 +16,6 @@ import GreetingContainer from './GreetingContainer'
 * 10 - в файле Greeting.tsx вычислить inputClass в зависимости от наличия ошибки
 * 11 - сделать стили в соответствии с дизайном
 * */
-
 // types
 export type UserType = {
     _id: string 

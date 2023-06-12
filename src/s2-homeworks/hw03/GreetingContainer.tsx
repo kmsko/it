@@ -8,34 +8,36 @@ type GreetingContainerPropsType = {
 }
 
 export const pureAddUser = (name: string, setError: (e: string) => void, setName: (name: string) => void, addUserCallback: (name: string) => void) => {
-    if (name === '') {
+    if (!name.trim()) {
         setError("error")
     } else {
         addUserCallback(name)
         setName("")
-        setError("")
     }
 }
 
-export const pureOnBlur = (name: string, setError: (e: string) => void) => { 
-    if (name === "") setError("error")
+export const pureOnBlur = (name: string, setError: (e: string) => void) => {
+    if (!name.trim()) {
+        setError("error")
+    }
 }
 
-export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: ()=>void) => { 
-    if(e.key == "Enter"){
+export const pureOnEnter = (e: KeyboardEvent<HTMLInputElement>, addUser: () => void) => {
+    if (e.key == "Enter") {
         addUser()
     }
 }
+
 const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     users,
     addUserCallback,
 }) => {
     const [name, setName] = useState<string>('')
-    const [error, setError] = useState<string>('') 
+    const [error, setError] = useState<string>('')
 
     const setNameCallback = (el: ChangeEvent<HTMLInputElement>) => {
-        if (el.currentTarget.value !== '') setName(el.currentTarget.value);
-        error && setError('error')
+        setName(el.currentTarget.value);
+        error && setError('')
     }
     const addUser = () => {
         pureAddUser(name, setError, setName, addUserCallback)
